@@ -1,7 +1,8 @@
 ## To do
 
 ### Provision below in AWS:
-```VPC with public and private subnets
+```
+VPC with public and private subnets
 
 Security Groups:
 
@@ -17,11 +18,15 @@ Use a key pair for SSH access
 
 S3 Bucket (Optional):
 
-For log storage or threat intel feeds```
+For log storage or threat intel feeds
+```
+
 
 ### Install security tools w Ansible:
+
 ```
 a. Write Ansible Playbooks
+
 Create a separate directory ansible/ with:
 
 inventory.ini
@@ -46,6 +51,9 @@ Configure services (e.g., auto-start, logging)
 
 Harden the instance (e.g., disable root login, UFW)
 ```
+
+
+
 
 ### Push All Configs to GitHub
 ```
