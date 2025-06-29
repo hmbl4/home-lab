@@ -1,1 +1,2 @@
-.terraform
+.terraform/
+fake_id_rsa.pub
