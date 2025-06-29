@@ -1,5 +1,9 @@
 ## To do
 
+
+`https://spacelift.io/blog/terraform-tutorial`
+
+
 ### Provision below in AWS:
 ```
 VPC with public and private subnets
@@ -75,5 +79,5 @@ Documentation: How to run Terraform and Ansible
 
 Notes on tool usage
 
-Future ideas (Phase 2+)```
-
+Future ideas (Phase 2+)
+```
