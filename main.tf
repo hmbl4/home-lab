@@ -1,8 +1,8 @@
 
 variable "ubuntu_sydney" {
-  description = "AMI ID for Sydney Ubuntu"
+  description = "AMI ID for ap-southeast-2 ubuntu"
   type        = string
-  default     = "ami-0df7a207adb9748c7"
+  default     = "ami-06b9ad502c09cc0dc"
 }
 
 # Core VPC and Subnets
@@ -62,7 +62,7 @@ resource "aws_security_group" "secure_access" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["115.188.97.164/32"]
+    cidr_blocks = [var.home_ip]
     description = "SSH access from Henrys IP only"
   }
 
@@ -138,7 +138,7 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_s3_bucket_versioning" "log-threat-intel" {
+resource "aws_s3_bucket" "log-threat-intel" {
 
   bucket = "henry-threat-intel-bucket"
 
