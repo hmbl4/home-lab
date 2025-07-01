@@ -1,0 +1,26 @@
+---
+- name: Deploy osquery
+  become: yes
+  hosts: siem
+  tasks:
+    - name: Add osquery GPG key
+      apt_key:
+        url: https://pkg.osquery.io/gpg.key
+        state: present
+
+    - name: Add osquery repo
+      apt_repository:
+        repo: 'deb [arch=amd64] https://pkg.osquery.io/deb deb main'
+        state: present
+
+    - name: Install osquery
+      apt:
+        name: osquery
+        update_cache: yes
+        state: present
+
+    - name: Enable and start osqueryd service
+      systemd:
+        name: osqueryd
+        enabled: yes
+        state: started

@@ -1,0 +1,31 @@
+---
+- name: Deploy logstash
+  become: yes
+  hosts: siem
+  tasks:
+    - name: Install dependencies for logstash
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
+    - name: Add Elastic GPG key
+      apt_key:
+        url: https://artifacts.elastic.co/GPG-KEY-elasticsearch
+        state: present
+
+    - name: Add Logstash repo
+      apt_repository:
+        repo: 'deb https://artifacts.elastic.co/packages/7.x/apt stable main'
+        state: present
+
+    - name: Install logstash
+      apt:
+        name: logstash
+        update_cache: yes
+        state: present
+
+    - name: Enable and start logstash service
+      systemd:
+        name: logstash
+        enabled: yes
+        state: started
