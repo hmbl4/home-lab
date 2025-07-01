@@ -1,6 +1,8 @@
-# Home lab 🐕 security automation
+# 🐾 Home Lab Security Automation 🐕
 
-This project sets out to provision a secure cloud-based environment using **Terraform** and automate the installation of key **security tools** with **Ansible**. The goal is to simulate a real-world deployment of IDS/IPS and SIEM components, allowing experimentation and learning in a reproducible and modular way.
+This project sets out to provision a secure cloud-based environment using Terraform and automate the installation of key security tools with Ansible.
+
+The goal? To simulate a real-world deployment of IDS/IPS and SIEM components—letting you sniff out threats like a good security pup. 🐶
 
 ## Aims for the project:
 
