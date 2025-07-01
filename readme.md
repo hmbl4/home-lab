@@ -2,7 +2,7 @@
 
 This project sets out to provision a secure cloud-based environment using **Terraform** and automate the installation of key **security tools** with **Ansible**. The goal is to simulate a real-world deployment of IDS/IPS and SIEM components, allowing experimentation and learning in a reproducible and modular way.
 
-## What This Project Achieves
+## Aims for the project:
 
 - Infrastructure provisioning on AWS with public/private VPCs  
 - Deployment of a Ubuntu EC2 instance with tight security groups  
@@ -12,19 +12,30 @@ This project sets out to provision a secure cloud-based environment using **Terr
   - Optional tools like fail2ban, osquery, and logstash  
 - System hardening via Ansible tasks  
 
-## Quick Start Instructions
+## Quick start instructions
 
+### Terraform
+1. Create an AWS Account (if you don’t have one) and set up IAM User for Terraform
+2. Configure AWS CLI
+3. Set Up Terraform AWS Provider Credentials:
+    - exporting credentials in command line, or
+    - AWS CLI profile `provider "aws" {}`
+5. `terraform init`
+6. `terraform plan`
+7. `terraform apply`
+
+
+### Ansible
 Clone the repo and run the playbooks:
 
-### Run Suricata playbook
-ansible-playbook -i ansible/inventory.ini ansible/playbook-suricata.yml
+#### Run Suricata playbook
+```ansible-playbook -i ansible/inventory.ini ansible/playbook-suricata.yml```
 
-### Run Wazuh Agent playbook
-ansible-playbook -i ansible/inventory.ini ansible/playbook-wazuh-agent.yml
+#### Run Wazuh Agent playbook
+```ansible-playbook -i ansible/inventory.ini ansible/playbook-wazuh-agent.yml```
 
-### Run Fail2Ban playbook (optional)
-ansible-playbook -i ansible/inventory.ini ansible/playbook-fail2ban.yml
-
+#### Run Fail2Ban playbook (optional)
+```ansible-playbook -i ansible/inventory.ini ansible/playbook-fail2ban.yml```
 
 ## AWS Infrastructure (Provision with Terraform)
 
@@ -50,7 +61,9 @@ Inside the `ansible/` directory:
 - `inventory.ini` — Define the target hosts  
 - `playbook-suricata.yml` — Installs and configures Suricata  
 - `playbook-wazuh-agent.yml` — Installs and configures Wazuh Agent  
-- `playbook-fail2ban.yml` — Optional, installs fail2ban  
+- `playbook-fail2ban.yml` — Installs fail2ban  
+- `playbook-osquery.yml` — Installs osquery  
+- `playbook-logstash.yml` — Installs logstash  
 
 ### Tasks Performed:
 - Update system packages  
