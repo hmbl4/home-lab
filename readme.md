@@ -3,6 +3,23 @@
 
 `https://spacelift.io/blog/terraform-tutorial`
 
+### Instructions
+
+Run the 
+```
+# Run Suricata playbook
+ansible-playbook -i inventory.ini playbook-suricata.yml
+
+# Run Wazuh Agent playbook
+ansible-playbook -i inventory.ini playbook-wazuh-agent.yml
+
+# Run fail2ban playbook. 
+ansible-playbook -i inventory.ini playbook-fail2ban.yml
+```
+
+
+
+
 
 ### Provision below in AWS:
 ```
