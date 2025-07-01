@@ -79,5 +79,4 @@ Documentation: How to run Terraform and Ansible
 
 Notes on tool usage
 
-Future ideas (Phase 2+)
 ```
