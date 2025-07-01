@@ -73,19 +73,29 @@ Inside the `ansible/` directory:
   - Disable root login  
   - Enable UFW (firewall)  
 
-## Suggested Repo Structure
+## Repo Structure
 
 ```
 home-lab/
-├── terraform/
-│ ├── main.tf
-│ └── variables.tf
-├── ansible/
-│ ├── inventory.ini
-│ ├── playbook-suricata.yml
-│ ├── playbook-wazuh-agent.yml
-│ └── playbook-fail2ban.yml
-└── README.md
+├── ansible
+│   ├── inventory.ini
+│   ├── playbook-fail2ban.yml
+│   ├── playbook-logstash.yml
+│   ├── playbook-osquery.yml
+│   ├── playbook-suricata.yml
+│   └── playbook-wazuh-agent.yml
+├── readme.md
+└── terraform
+    ├── fake_id_rsa.pub
+    ├── main.tf
+    ├── outputs.tf
+    ├── plan.json
+    ├── plan.tfplan
+    ├── provider.tf
+    ├── terraform.tfstate
+    ├── terraform.tfstate.backup
+    ├── terraform.tfvars
+    └── variables.tf
 ```
 
 Include:  
