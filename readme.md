@@ -65,7 +65,7 @@ a. GitHub Repo Structure Example:
 arduino
 Copy
 Edit
-home-security-lab/
+home-lab/
 ├── terraform/
 │   ├── main.tf
 │   └── ...
