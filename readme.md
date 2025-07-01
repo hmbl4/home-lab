@@ -5,7 +5,7 @@
 
 ### Instructions
 
-Run the 
+Run the playbooks:
 ```
 # Run Suricata playbook
 ansible-playbook -i inventory.ini playbook-suricata.yml
@@ -13,7 +13,7 @@ ansible-playbook -i inventory.ini playbook-suricata.yml
 # Run Wazuh Agent playbook
 ansible-playbook -i inventory.ini playbook-wazuh-agent.yml
 
-# Run fail2ban playbook. 
+# Run fail2ban playbook
 ansible-playbook -i inventory.ini playbook-fail2ban.yml
 ```
 
